@@ -253,7 +253,7 @@
       let zip = new JSZip();
       var counter1 = 0;
       for (let file of mpArr) {
-        let blob = await fetch(`https://animal-jam-api.nl/api/mp-c/${mpArr[counter1]}`).then(r => r.blob());
+        let blob = await fetch(`https://animal-jam-api.nl/api/mp-c/${mpArr[counter1].substring(mpArr[counter1].lastIndexOf('/')+1)}.png`).then(r => r.blob());
         let filename = `masterpiece-${counter1}.png`;
         zip.file(filename, blob);
         counter1++;
